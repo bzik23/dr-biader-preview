@@ -1,0 +1,1090 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>ד״ר ביאדר - אפרסק פיסטוק</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
+<link rel="preload" as="video" href="../media/panel-mid.mp4" type="video/mp4">
+<style>
+/* ============ LAYOUT CONCEPT ============
+   Editorial RTL luxury medical site. Warm cream canvas, dusty-mauve primary,
+   warm nude + olive accent. Two-column hero, coverflow clinic gallery,
+   draggable before/after, generous air, Frank Ruhl Libre display serif. */
+:root{
+  /* color — peach / pistachio on warm cream (Dr. Biader brand) */
+  --bg:#FBF4EE;
+  --surface:#FFFFFF;
+  --surface-2:#FDF2EA;
+  --ink:#3A2E2A;        /* warm brown near-black */
+  --muted:#6B5A52;      /* warm grey-brown */
+  --mauve:#EFA584;      /* peach / primary */
+  --mauve-deep:#B25E3C; /* deep peach for text accents */
+  --mauve-soft:#FBE2D4; /* pale peach wash */
+  --nude:#DDB49C;       /* warm apricot nude */
+  --olive:#93B067;      /* pistachio accent */
+  --olive-deep:#5C7A36; /* deep pistachio for text */
+  --olive-soft:#E5EDD5; /* pale pistachio wash */
+  --gold:#FBBC04;       /* Google review gold */
+  --line:#EEDDD1;
+  --shadow:28px 34px 70px -40px rgba(84,54,40,.40);
+  --shadow-sm:0 12px 30px -18px rgba(84,54,40,.32);
+
+  /* type */
+  --font-display:"Frank Ruhl Libre",Georgia,"Times New Roman",serif;
+  --font-body:"Assistant","Segoe UI",system-ui,sans-serif;
+  --font-latin:"Cormorant Garamond",Georgia,serif;
+
+  --fs-display:clamp(2.5rem,6.2vw,4.9rem);
+  --fs-h2:clamp(1.85rem,4vw,3.1rem);
+  --fs-h3:clamp(1.25rem,2.2vw,1.6rem);
+  --fs-lead:clamp(1.05rem,1.6vw,1.3rem);
+  --maxw:1220px;
+  --radius:4px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1B1614; --surface:#241D1A; --surface-2:#2B231F;
+  --ink:#F4EBE5; --muted:#CDBBB1; --mauve:#F2B193; --mauve-deep:#F7C6AD;
+  --mauve-soft:#3E2D25; --nude:#D8B09A; --olive:#B3CC8C; --olive-deep:#C4DA9E; --olive-soft:#2F3727;
+  --line:#3D312B;
+  --shadow:28px 34px 70px -40px rgba(0,0,0,.6); --shadow-sm:0 12px 30px -18px rgba(0,0,0,.55);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#1B1614; --surface:#241D1A; --surface-2:#2B231F;
+  --ink:#F4EBE5; --muted:#CDBBB1; --mauve:#F2B193; --mauve-deep:#F7C6AD;
+  --mauve-soft:#3E2D25; --nude:#D8B09A; --olive:#B3CC8C; --olive-deep:#C4DA9E; --olive-soft:#2F3727;
+  --line:#3D312B;
+  --shadow:28px 34px 70px -40px rgba(0,0,0,.6); --shadow-sm:0 12px 30px -18px rgba(0,0,0,.55);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--font-body);font-weight:400;font-size:17.5px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+#app{direction:rtl;overflow-x:clip}
+.hero-grid>*,.about-grid>*,.ba-grid>*,.contact-grid>*{min-width:0}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;font-family:var(--font-display);font-weight:700;line-height:1.08;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+::selection{background:var(--mauve-soft);color:var(--ink)}
+:focus-visible{outline:2.5px solid var(--mauve);outline-offset:3px;border-radius:2px}
+
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;
+  padding-left:max(22px,env(safe-area-inset-left,0px));
+  padding-right:max(22px,env(safe-area-inset-right,0px));}
+.eyebrow{font-family:var(--font-body);font-weight:600;font-size:.74rem;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--mauve-deep)}
+.section{padding-block:clamp(64px,9vw,120px)}
+.lead{font-size:var(--fs-lead);color:var(--muted);line-height:1.62;font-weight:500}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.55em;font-family:var(--font-body);
+  font-weight:600;font-size:.98rem;padding:.92em 1.7em;border-radius:40px;cursor:pointer;
+  border:1px solid transparent;transition:transform .35s cubic-bezier(.2,.8,.2,1),background .3s,color .3s,box-shadow .35s;white-space:nowrap}
+.btn-primary{background:var(--mauve);color:#3A2116;box-shadow:0 14px 28px -14px rgba(178,94,60,.55)}
+.btn-primary:hover{background:var(--mauve-deep);color:#fff;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--mauve);color:var(--mauve-deep);transform:translateY(-2px)}
+.btn-wa{background:var(--olive);color:#fff}
+.btn-wa:hover{filter:brightness(1.07);transform:translateY(-2px)}
+
+/* ============ HEADER ============ */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);
+  background:var(--surface);z-index:60}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;
+  background:transparent;border-bottom:1px solid transparent;
+  transition:border-color .3s,background .3s,backdrop-filter .3s}
+header.scrolled{border-bottom-color:var(--line);background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(14px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;height:72px}
+.brand{display:flex;flex-direction:column;line-height:1;gap:2px}
+.brand .b-he{font-family:var(--font-display);font-weight:700;font-size:1.18rem;letter-spacing:.01em}
+.brand .b-en{font-family:var(--font-latin);font-size:.82rem;letter-spacing:.42em;color:var(--muted);text-transform:uppercase}
+/* original logo (gold, transparent PNG) */
+.brand-logo{display:block;height:46px;width:auto;max-width:none}
+.foot-logo{display:block;height:auto;width:min(210px,60vw);margin-bottom:.4rem}
+@media (max-width:560px){.brand-logo{height:38px}}
+.nav-links{display:flex;gap:1.9rem;align-items:center}
+.nav-links a{font-size:.95rem;font-weight:500;color:var(--ink);position:relative;padding:.2em 0;opacity:.82;transition:opacity .25s}
+.nav-links a::after{content:"";position:absolute;inset-inline:0;bottom:-3px;height:1.5px;background:var(--mauve);transform:scaleX(0);transform-origin:right;transition:transform .3s}
+.nav-links a:hover{opacity:1}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-right{display:flex;align-items:center;gap:.7rem}
+.icon-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:transparent;
+  color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:border-color .25s,transform .25s}
+.icon-btn:hover{border-color:var(--mauve);transform:translateY(-1px)}
+.burger{display:none}
+.hdr-phone{display:inline-flex;align-items:center;gap:.4rem;font-weight:600;font-size:.92rem;color:var(--ink);white-space:nowrap;transition:color .25s}
+.hdr-phone svg{color:var(--mauve);flex:0 0 auto}
+.hdr-phone:hover{color:var(--mauve-deep)}
+.hdr-wa{background:#25D366;border-color:#25D366;color:#fff}
+.hdr-wa:hover{filter:brightness(1.07);border-color:#25D366}
+
+/* ============ HERO (split triptych - light) ============ */
+.hero{position:relative;overflow:hidden;isolation:isolate;display:flex;align-items:center;justify-content:center;
+  min-height:100vh;min-height:100svh;
+  margin-top:calc(-72px - env(safe-area-inset-top,0px));
+  padding-bottom:14vh;
+  background:var(--bg)}
+.hero-panels{position:absolute;inset:0;z-index:0;display:grid;grid-template-columns:repeat(3,1fr);
+  gap:2px;background:var(--line)}
+.hero-panel{position:relative;overflow:hidden}
+.hero-panel video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;
+  filter:brightness(1.08) saturate(1.06) contrast(1.02)}
+.hero-panel.mid{box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.hero-panels::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:
+  linear-gradient(to left, rgba(251,244,238,.96) 0%, rgba(251,244,238,.85) 18%, rgba(251,244,238,.4) 36%, rgba(251,244,238,0) 54%),
+  linear-gradient(to bottom, rgba(251,244,238,.6) 0%, rgba(251,244,238,0) 15%),
+  linear-gradient(to top, rgba(251,244,238,.32) 0%, rgba(251,244,238,0) 38%),
+  radial-gradient(120% 90% at 86% 8%, var(--mauve-soft) 0%, transparent 46%)}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:none;text-align:start;color:var(--ink)}
+.hero-copy{max-width:min(37vw,430px);margin-inline-start:0;margin-inline-end:auto}
+.hero .eyebrow{color:var(--mauve-deep);opacity:1}
+.hero h1{font-size:clamp(1.9rem,2.9vw,2.9rem);margin-top:.6rem;line-height:1.06;color:var(--ink);text-shadow:0 1px 16px rgba(251,244,238,.7)}
+.hero h1 .accent{color:var(--mauve-deep);font-style:italic;font-family:var(--font-display)}
+.hero-quote{margin:1.7rem 0 0;padding-inline-start:1.1rem;border-inline-start:2.5px solid var(--olive);max-width:42ch;
+  font-family:var(--font-display);font-weight:500;font-size:clamp(1.08rem,1.6vw,1.42rem);line-height:1.5;color:var(--ink)}
+.hero-quote cite{display:block;margin-top:.8rem;font-family:var(--font-body);font-style:normal;
+  font-weight:600;font-size:.82rem;letter-spacing:.04em;color:var(--mauve-deep)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem;justify-content:flex-start}
+.hero .btn-ghost{color:var(--ink);border-color:var(--line);background:color-mix(in srgb,var(--surface) 55%,transparent)}
+.hero .btn-ghost:hover{border-color:var(--mauve);color:var(--mauve-deep);background:var(--surface)}
+.hero-rating{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.4rem;font-size:.9rem;color:var(--muted);justify-content:flex-start}
+.hero-rating .stars{color:var(--mauve);letter-spacing:.08em}
+.hero-rating b{font-family:var(--font-display);color:var(--ink);font-size:1.08rem}
+.hero-cue{position:absolute;z-index:2;inset-inline:0;bottom:calc(18px + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;color:var(--muted);pointer-events:none}
+.hero-cue span{display:grid;place-items:center;gap:5px;font-size:.66rem;letter-spacing:.24em}
+.hero-cue svg{animation:cueBob 1.9s ease-in-out infinite}
+@keyframes cueBob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* ============ TRUST STRIP ============ */
+.trust{border-block:1px solid var(--line);background:var(--surface-2)}
+.trust-row{display:flex;flex-wrap:wrap;justify-content:center}
+.trust-cell{flex:1 1 150px;padding:1.8rem 1.1rem 1.6rem;text-align:center;transition:transform .35s}
+.trust-cell:hover{transform:translateY(-3px)}
+.trust-ic{width:40px;height:40px;border-radius:50%;background:var(--olive-soft);color:var(--olive-deep);display:grid;place-items:center;margin:0 auto .7rem}
+.trust-cell b{display:block;font-family:var(--font-display);font-size:1.4rem;color:var(--mauve-deep);line-height:1.05}
+.trust-cell span{display:block;margin-top:.45rem;font-size:.875rem;color:var(--ink);font-weight:500;letter-spacing:.01em;line-height:1.5}
+
+/* ============ SECTION HEAD ============ */
+.sec-head{max-width:min(92vw,680px);margin-bottom:clamp(32px,4vw,56px)}
+.sec-head h2{font-size:var(--fs-h2);margin-top:.6rem}
+.sec-head.center{margin-inline:auto;text-align:center}
+
+/* ============ WHY ============ */
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+.why-card{background:var(--surface);border:1px solid var(--line);border-radius:5px;
+  position:relative;display:flex;align-items:stretch;overflow:hidden;
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .4s}
+.why-card::before{content:"";position:absolute;inset-block:0;inset-inline-start:0;width:3px;background:var(--olive);transform:scaleY(0);transform-origin:bottom;transition:transform .4s;z-index:3}
+.why-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:transparent}
+.why-card:hover::before{transform:scaleY(1)}
+.why-body{flex:1 1 58%;min-width:0;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center}
+.why-num{font-family:var(--font-latin);font-size:1.4rem;color:var(--olive-deep);font-weight:600}
+.why-card h3{font-size:var(--fs-h3);margin:.6rem 0 .6rem}
+.why-card p{color:var(--muted);font-size:1.02rem;line-height:1.68}
+.why-media{flex:0 0 40%;position:relative;align-self:stretch;min-height:230px;background:var(--surface-2);overflow:hidden}
+.why-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.why-card:hover .why-media img{transform:scale(1.05)}
+.why-media::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to right,transparent 66%,var(--surface) 100%)}
+/* clean variant — show the whole photo, smaller, no crop and no edge fade */
+.why-media--clean{background:var(--surface)}
+.why-media--clean::after{display:none}
+.why-media--clean img{object-fit:contain;padding:14px}
+
+/* ============ TREATMENTS GALLERY (image tiles) ============ */
+.treat-gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:transparent}
+.tcat{position:relative;display:block;aspect-ratio:3/4.3;overflow:hidden;background:var(--ink);isolation:isolate}
+.tcat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:grayscale(.55) sepia(.18) saturate(1.05) contrast(1.02);
+  transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .6s}
+.tcat::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:
+  linear-gradient(to top, rgba(46,33,27,.92) 0%, rgba(46,33,27,.38) 40%, rgba(46,33,27,.1) 66%, rgba(46,33,27,.26) 100%),
+  linear-gradient(to top, var(--mauve-deep) -10%, transparent 48%)}
+.tcat:hover img{transform:scale(1.05);filter:grayscale(.1) sepia(.05) saturate(1.08)}
+.tcat-label{position:absolute;inset-inline:0;bottom:0;z-index:2;padding:1.4rem 1.1rem 1.7rem;text-align:center;color:#fff}
+.tcat-label h3{font-family:var(--font-display);font-weight:700;font-size:clamp(1.12rem,1.4vw,1.5rem);color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.3)}
+.tcat-label span{display:block;margin-top:.4rem;font-size:.74rem;letter-spacing:.03em;color:rgba(255,255,255,.82)}
+.tcat-label .t-arrow{display:inline-block;margin-top:.7rem;color:#fff;font-size:1.05rem;opacity:.75;transition:transform .4s,opacity .4s}
+.tcat:hover .t-arrow{transform:translateX(-7px);opacity:1}
+/* treatment sub-list — revealed inside a tile when it expands (desktop).
+   Height animates via grid-template-rows 0fr->1fr (no layout thrash). */
+.tcat-list{display:grid;grid-template-rows:0fr;opacity:0;
+  transition:grid-template-rows .55s cubic-bezier(.2,.8,.2,1),opacity .4s ease}
+.tcat-list-in{overflow:hidden;min-height:0;list-style:none;margin:0;padding:0}
+.tcat-list li{font-family:var(--font-body);font-weight:500;color:rgba(255,255,255,.9);
+  font-size:.9rem;line-height:1.35;padding:.28rem .2rem;
+  text-align:center;opacity:0;transform:translateY(9px);
+  transition:opacity .45s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
+.tcat-list li:first-child{padding-top:.7rem}
+.tcat-list li:not(.tcat-group){cursor:pointer}
+.tcat-list li:not(.tcat-group):hover{color:#fff;text-decoration:underline;
+  text-decoration-color:#F9CBB4;text-decoration-thickness:1.5px;text-underline-offset:5px}
+.tcat-list .tcat-group{border-top:0;color:#F9CBB4;font-weight:700;font-size:.64rem;
+  letter-spacing:.08em;padding:.7rem .2rem .1rem}
+/* expanding strip: hovered tile grows, the others yield (desktop pointer) */
+@media (hover:hover) and (min-width:981px){
+  .treat-gallery{display:flex;height:clamp(430px,32vw,540px)}
+  .tcat{flex:1 1 0;min-width:0;height:100%;aspect-ratio:auto;transition:flex-grow .6s cubic-bezier(.2,.8,.2,1)}
+  .treat-gallery:hover .tcat{flex-grow:.7}
+  .treat-gallery:hover .tcat:hover{flex-grow:2.6}
+  .treat-gallery:hover .tcat:not(:hover) .tcat-label span:not(.t-arrow){opacity:0;transition:opacity .4s}
+  /* OPEN TILE — title + menu as a vertical panel on the right (start) side,
+     image on the left; scrim re-weighted to the right so the menu stays legible */
+  .treat-gallery:hover .tcat:hover::after{background:
+    linear-gradient(to left, rgba(46,33,27,.93) 0%, rgba(46,33,27,.84) 24%, rgba(46,33,27,.5) 50%, rgba(46,33,27,.12) 74%, rgba(46,33,27,.04) 100%),
+    linear-gradient(to top, rgba(46,33,27,.42) 0%, rgba(46,33,27,0) 32%)}
+  .treat-gallery:hover .tcat:hover .tcat-label{inset-block:0;display:flex;flex-direction:column;
+    justify-content:center;align-items:flex-start;text-align:start;
+    padding:1.8rem clamp(1.3rem,2.2vw,2.3rem) 1.8rem 38%}
+  .treat-gallery:hover .tcat:hover .tcat-label h3{font-size:clamp(1.3rem,1.7vw,1.85rem)}
+  /* swap the one-line teaser for the full list on the open tile */
+  .treat-gallery:hover .tcat:hover:has(.tcat-list) .tcat-sub{display:none}
+  .treat-gallery:hover .tcat:hover .tcat-list{grid-template-rows:1fr;opacity:1;width:100%}
+  .treat-gallery:hover .tcat:hover .tcat-list li{opacity:1;transform:none;text-align:start}
+  .treat-gallery:hover .tcat:hover .tcat-list li:nth-child(1){transition-delay:.04s}
+  .treat-gallery:hover .tcat:hover .tcat-list li:nth-child(2){transition-delay:.09s}
+  .treat-gallery:hover .tcat:hover .tcat-list li:nth-child(3){transition-delay:.14s}
+  .treat-gallery:hover .tcat:hover .tcat-list li:nth-child(4){transition-delay:.19s}
+  .treat-gallery:hover .tcat:hover .tcat-list li:nth-child(5){transition-delay:.24s}
+  .treat-gallery:hover .tcat:hover .tcat-list li:nth-child(6){transition-delay:.29s}
+  .treat-gallery:hover .tcat:hover .tcat-list li:nth-child(7){transition-delay:.34s}
+  .treat-gallery:hover .tcat:hover .tcat-list li:nth-child(8){transition-delay:.39s}
+  .treat-gallery:hover .tcat:hover .tcat-list li:nth-child(n+9){transition-delay:.44s}
+}
+
+/* ============ COVERFLOW GALLERY ============ */
+.flow-wrap{position:relative;margin-top:8px}
+.flow{display:flex;gap:clamp(14px,2vw,26px);overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:30px max(22px,env(safe-area-inset-right,0px)) 40px max(22px,env(safe-area-inset-left,0px));
+  scrollbar-width:none;cursor:grab;-webkit-overflow-scrolling:touch}
+.flow::-webkit-scrollbar{display:none}
+.flow.drag{cursor:grabbing;scroll-snap-type:none}
+.slide{flex:0 0 clamp(230px,34vw,400px);scroll-snap-align:center;position:relative;
+  aspect-ratio:3/4;border-radius:6px;overflow:hidden;box-shadow:var(--shadow-sm);
+  transform:scale(.78);opacity:.42;transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .55s,box-shadow .55s;background:var(--surface-2)}
+.slide.active{transform:scale(1.07);opacity:1;box-shadow:var(--shadow);z-index:2}
+.slide img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.slide figcaption{position:absolute;inset-block-end:0;inset-inline:0;padding:1.3rem 1.2rem .95rem;
+  background:linear-gradient(0deg,rgba(46,33,27,.82),transparent);color:#fff}
+.slide figcaption b{font-family:var(--font-display);font-size:1.18rem;font-weight:700;display:block}
+.slide figcaption span{font-size:.8rem;opacity:.85}
+.flow-nav{display:flex;gap:.6rem;justify-content:center;margin-top:.5rem}
+.flow-dot{width:8px;height:8px;border-radius:50%;background:var(--line);border:none;cursor:pointer;padding:0;transition:background .3s,transform .3s}
+.flow-dot.on{background:var(--mauve);transform:scale(1.35)}
+
+/* ============ BEFORE / AFTER ============ */
+/* reveal slider — split is a % from the physical LEFT; before on the left, after on the right */
+.ba{background:var(--surface-2);border-block:1px solid var(--line)}
+.ba-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,4vw,60px);align-items:center}
+.ba-stages{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,20px)}
+.ba-item{margin:0}
+.ba-cap{margin-top:.7rem;text-align:center;font-size:.82rem;font-weight:600;letter-spacing:.02em;color:var(--muted)}
+.ba-stage{position:relative;aspect-ratio:3/4;border-radius:6px;overflow:hidden;background:var(--surface);
+  box-shadow:var(--shadow);user-select:none;touch-action:pan-y;cursor:grab}
+.ba-stage.drag{cursor:grabbing}
+.ba-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;-webkit-user-drag:none}
+.ba-after{clip-path:inset(0 0 0 var(--split,50%));transition:clip-path .1s ease-out}
+.ba-tag{position:absolute;top:10px;z-index:3;font-size:.68rem;font-weight:700;letter-spacing:.1em;
+  background:rgba(46,33,27,.62);color:#fff;padding:.3em .75em;border-radius:30px;backdrop-filter:blur(4px)}
+.ba-tag.before{left:10px}
+.ba-tag.after{right:10px}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--split,50%);width:3px;background:#fff;
+  z-index:4;transform:translateX(-50%);box-shadow:0 0 0 1px rgba(46,33,27,.18);transition:left .1s ease-out}
+.ba-knob{position:absolute;top:74%;left:var(--split,50%);transform:translate(-50%,-50%);
+  z-index:5;width:clamp(46px,11vw,58px);height:clamp(46px,11vw,58px);border-radius:50%;background:#fff;
+  box-shadow:0 8px 20px -6px rgba(46,33,27,.55),0 0 0 2px rgba(255,255,255,.95);
+  display:grid;place-items:center;cursor:grab;color:var(--mauve-deep);transition:left .1s ease-out}
+.ba-stage.drag .ba-knob{cursor:grabbing;box-shadow:0 10px 24px -6px rgba(46,33,27,.6),0 0 0 3px var(--mauve-soft)}
+.ba-knob svg{width:20px;height:20px}
+.ba-note{display:inline-flex;align-items:center;gap:.5em;margin-top:1.3rem;font-size:.8rem;color:var(--muted);
+  background:var(--olive-soft);padding:.5em 1em;border-radius:30px}
+
+/* ============ ABOUT ============ */
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,4vw,64px);align-items:center}
+.about-media{position:relative;aspect-ratio:4/5;border-radius:6px;overflow:hidden;box-shadow:var(--shadow)}
+.about-media img{width:100%;height:100%;object-fit:cover}
+.about-media .frame{position:absolute;inset:14px;border:1px solid rgba(255,255,255,.5);pointer-events:none;border-radius:3px}
+.about h2{font-size:var(--fs-h2);margin:.6rem 0 1.2rem}
+.about p{color:var(--muted);margin-bottom:1.1rem;max-width:52ch}
+.about .vision{font-family:var(--font-display);font-size:clamp(1.15rem,1.9vw,1.5rem);color:var(--ink);
+  line-height:1.5;font-weight:500;border-inline-start:2.5px solid var(--mauve);padding-inline-start:1.1rem;margin-bottom:1.4rem}
+.cred{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.4rem}
+.cred span{font-size:.82rem;font-weight:500;color:var(--ink);background:var(--surface);border:1px solid var(--line);
+  padding:.45em 1em;border-radius:30px}
+
+/* ============ TESTIMONIALS ============ */
+.tst{background:var(--mauve-soft)}
+:root[data-theme="dark"] .btn-primary:hover{color:#2A1A12}
+:root[data-theme="dark"] .tst,:root:not([data-theme="light"]) .tst{background:var(--surface-2)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tst{background:var(--surface-2)}}
+.g{width:22px;height:22px;flex:0 0 auto}
+/* review score — highlights the volume of 5-star reviews */
+.tst-score{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.6rem 1.1rem;
+  width:max-content;max-width:100%;margin:0 auto clamp(26px,3.6vw,44px);padding:.95rem 1.7rem;
+  background:var(--surface);border:1px solid var(--line);border-radius:60px;box-shadow:var(--shadow-sm)}
+.tst-score .g{width:28px;height:28px}
+.tst-score .big{font-family:var(--font-display);font-weight:700;font-size:2rem;color:var(--ink);line-height:1}
+.tst-score .stars{color:var(--gold);font-size:1.2rem;letter-spacing:.06em}
+.tst-score .divider{width:1px;height:28px;background:var(--line)}
+.tst-score .sub{font-size:.95rem;color:var(--muted);font-weight:600}
+.tst-score .sub b{color:var(--mauve-deep);font-family:var(--font-display);font-size:1.15rem}
+.tst-slider{margin-top:4px;overflow:hidden;padding:10px 0 24px;--tst-gap:1.4rem}
+.tst-track{display:flex;gap:var(--tst-gap);will-change:transform}
+.tst-track>.tst-card{flex:0 0 calc((100% - 2*var(--tst-gap))/3)}
+.tst-dots{display:flex;gap:.6rem;justify-content:center;margin-top:.2rem}
+.tst-dot{width:8px;height:8px;border-radius:50%;background:var(--line);border:none;cursor:pointer;padding:0;transition:background .3s,transform .3s}
+.tst-dot.on{background:var(--gold);transform:scale(1.35)}
+.tst-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.6rem 1.5rem;box-shadow:var(--shadow-sm);
+  display:flex;flex-direction:column;gap:.85rem;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .4s}
+.tst-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
+.tst-head{display:flex;align-items:center;gap:.65rem}
+.tst-ava{flex:0 0 auto;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:#fff;background:var(--av,var(--mauve))}
+.tst-id{display:flex;flex-direction:column;min-width:0;line-height:1.3}
+.tst-id .nm{font-weight:700;font-size:.95rem;color:var(--ink)}
+.tst-id .pr{font-size:.8rem;color:var(--muted);font-weight:500}
+.tst-head .g{margin-inline-start:auto}
+.tst-card .stars{color:var(--gold);letter-spacing:.1em;font-size:1.05rem}
+.tst-card .q{font-family:var(--font-display);font-size:1.08rem;line-height:1.55;color:var(--ink)}
+.tst-foot{text-align:center;margin-top:2.4rem;font-size:.9rem;color:var(--muted)}
+.tst-foot b{font-family:var(--font-display);color:var(--mauve-deep);font-size:1.5rem}
+
+/* ============ VIDEO BAND ============ */
+.vid{position:relative;border-radius:8px;overflow:hidden;min-height:340px;display:grid;place-items:center;text-align:center;color:#fff}
+.vid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,33,27,.5),rgba(46,33,27,.68))}
+.vid-inner{position:relative;z-index:2;padding:3.4rem 1.4rem;max-width:40ch}
+.vid-inner h2{color:#fff;font-size:var(--fs-h2)}
+.vid-inner p{color:rgba(255,255,255,.85);margin:1rem auto 1.6rem}
+.play{width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.75);
+  display:grid;place-items:center;margin:0 auto 1.6rem;color:#fff;transition:transform .35s,background .35s}
+.vid a:hover .play{transform:scale(1.08);background:rgba(255,255,255,.25)}
+
+/* ============ CONTACT ============ */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,4vw,64px);align-items:start}
+.contact h2{font-size:var(--fs-h2);margin:.6rem 0 1.2rem}
+.info-row{display:flex;gap:.9rem;align-items:flex-start;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.info-row .ic{color:var(--mauve);flex:0 0 auto;margin-top:2px}
+.info-row b{display:block;font-weight:600;font-size:1.02rem}
+.info-row span{color:var(--muted);font-size:.92rem}
+.info-row a{color:var(--muted)}
+.info-row a:hover{color:var(--mauve-deep)}
+.num{direction:ltr;unicode-bidi:plaintext;font-variant-numeric:tabular-nums}
+form{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.9rem;display:flex;flex-direction:column;gap:1rem}
+label{font-size:.82rem;font-weight:600;color:var(--ink);display:block;margin-bottom:.4rem}
+input,select,textarea{width:100%;font-family:var(--font-body);font-size:.98rem;color:var(--ink);
+  background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:.8em .9em}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--mauve)}
+.form-msg{font-size:.9rem;color:var(--olive-deep);font-weight:600;min-height:1.2em}
+
+/* ============ FOOTER ============ */
+footer{background:var(--ink);color:#EFE6E8;
+  padding-block:clamp(48px,6vw,80px) calc(28px + env(safe-area-inset-bottom,0px))}
+:root[data-theme="dark"] footer,:root:not([data-theme="light"]) footer{background:#14100E}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.4rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.12)}
+.foot-brand .b-he{font-family:var(--font-display);font-size:1.5rem;font-weight:700}
+.foot-brand .b-en{font-family:var(--font-latin);letter-spacing:.42em;font-size:.9rem;opacity:.65;text-transform:uppercase}
+.foot-brand p{color:rgba(239,230,232,.6);font-size:.9rem;margin-top:1rem;max-width:34ch}
+.foot-col h4{font-family:var(--font-body);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(239,230,232,.5);margin:0 0 1rem}
+.foot-col a{display:block;color:rgba(239,230,232,.82);font-size:.93rem;padding:.3em 0;transition:color .25s}
+.foot-col a:hover{color:var(--mauve)}
+.foot-social{display:flex;gap:.7rem;margin-top:1.2rem}
+.foot-social a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;color:#EFE6E8;transition:background .25s,border-color .25s}
+.foot-social a:hover{background:var(--mauve);border-color:var(--mauve)}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.8rem;font-size:.82rem;color:rgba(239,230,232,.5)}
+
+/* ============ FLOATING WA ============ */
+.wa-float{position:fixed;z-index:55;inset-block-end:calc(18px + env(safe-area-inset-bottom,0px));
+  inset-inline-start:calc(18px + env(safe-area-inset-left,0px));width:58px;height:58px;border-radius:50%;
+  background:var(--olive);color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.4);
+  transition:transform .3s}
+.wa-float:hover{transform:scale(1.08)}
+
+/* ============ MOBILE NAV ============ */
+.mnav{position:fixed;inset:0;z-index:70;background:var(--bg);display:flex;flex-direction:column;
+  padding:calc(24px + env(safe-area-inset-top,0px)) 28px 28px;direction:rtl;
+  opacity:0;visibility:hidden;transform:translateY(-10px);
+  transition:opacity .3s ease,visibility .3s ease,transform .35s cubic-bezier(.2,.8,.2,1)}
+.mnav.open{opacity:1;visibility:visible;transform:none}
+.mnav-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:2.5rem}
+.mnav a{font-family:var(--font-display);font-size:1.7rem;font-weight:700;padding:.5rem 0;border-bottom:1px solid var(--line)}
+.mnav .btn{margin-top:1.6rem}
+
+/* reveal (from a visible resting state) */
+.rv{opacity:0;transform:translateY(22px);animation:rvin .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes rvin{to{opacity:1;transform:none}}
+
+@media (max-width:980px){
+  .hero-copy{max-width:none;margin-inline:auto;text-align:center}
+  .hero-quote{margin-inline:auto}
+  .hero-cta,.hero-rating{justify-content:center}
+  .hero-panels{grid-template-columns:1fr;grid-auto-rows:1fr}
+  .hero-panel video{object-position:center 38%}
+  .hero-panels::after{background:
+    linear-gradient(to bottom, rgba(251,244,238,.52) 0%, rgba(251,244,238,.34) 45%, rgba(251,244,238,.66) 100%),
+    radial-gradient(120% 55% at 50% 0%, var(--mauve-soft) 0%, transparent 55%)}
+  .ba-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .treat-gallery{grid-template-columns:repeat(3,1fr)}
+  .tst-track>.tst-card{flex:0 0 calc((100% - var(--tst-gap))/2)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .burger{display:grid}
+  .about-media{max-width:440px;margin-inline:auto}
+}
+@media (max-width:560px){
+  .trust-row{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr}
+  .why-card{flex-direction:column}
+  .why-media{order:-1;flex-basis:auto;width:100%;min-height:0;height:180px}
+  .why-media::after{background:linear-gradient(to bottom,transparent 58%,var(--surface) 100%)}
+  .why-body{flex-basis:auto;padding:1.4rem 1.5rem 1.6rem}
+  .treat-gallery{grid-template-columns:1fr}
+  .tcat{aspect-ratio:16/10}
+  .tst-track>.tst-card{flex:0 0 100%}
+  .foot-grid{grid-template-columns:1fr}
+  .hero-cta .btn{flex:1 1 auto;justify-content:center}
+  .hdr-phone{display:none}
+  header .nav-right .btn-primary{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .hero-panel video{display:none}
+  .hero-panels{background:center/cover no-repeat url(../media/panel-poster.jpg)}
+  .rv{opacity:1;transform:none;animation:none}
+}
+</style>
+
+<div id="app">
+  <!-- HEADER -->
+  <header id="hdr">
+    <div class="wrap nav">
+      <a href="#top" class="brand" aria-label="ד״ר ביאדר בלאל, דף הבית">
+        <img class="brand-logo" src="../img/logo-h.png" alt="Dr. Biader, Plastic Surgeon - ד״ר ביאדר בלאל" width="543" height="120">
+      </a>
+      <nav class="nav-links" aria-label="ניווט ראשי">
+        <a href="#about">אודות הרופא</a>
+        <a href="#treatments">הטיפולים</a>
+        <a href="#ba">לפני ואחרי</a>
+        <a href="#testimonials">המלצות</a>
+        <a href="#contact">צור קשר</a>
+      </nav>
+      <div class="nav-right">
+        <a href="tel:0503593642" class="hdr-phone num" aria-label="התקשרו אל המרפאה 050-359-3642">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          050-359-3642
+        </a>
+        <a href="#wa" class="icon-btn hdr-wa" data-wa aria-label="שיחה בוואטסאפ">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.2.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.8.9c.3.1.5.2.5.4.1.1.1.6-.1 1.2z"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-primary" style="padding:.7em 1.3em">לתיאום ייעוץ</a>
+        <button class="icon-btn" id="theme" aria-label="החלפת מצב תצוגה" title="מצב בהיר/כהה">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" id="theme-ic"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6 19 19M19 5l-1.4 1.4M6.4 17.6 5 19"/></svg>
+        </button>
+        <button class="icon-btn burger" id="burger" aria-label="תפריט">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mnav" id="mnav">
+    <div class="mnav-top">
+      <span class="brand"><img class="brand-logo" src="../img/logo-h.png" alt="Dr. Biader, Plastic Surgeon - ד״ר ביאדר בלאל" width="543" height="120"></span>
+      <button class="icon-btn" id="mclose" aria-label="סגירה"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <a href="#about">אודות הרופא</a>
+    <a href="#treatments">הטיפולים</a>
+    <a href="#ba">לפני ואחרי</a>
+    <a href="#testimonials">המלצות</a>
+    <a href="#contact">צור קשר</a>
+    <a href="#contact" class="btn btn-primary">לתיאום פגישת ייעוץ</a>
+  </div>
+
+  <main id="top">
+    <!-- HERO (split triptych) -->
+    <section class="hero" id="hero">
+      <div class="hero-panels" aria-hidden="true">
+        <div class="hero-panel"><video autoplay muted loop playsinline preload="auto" poster="../media/panel-poster.jpg" tabindex="-1"><source src="../media/panel-right.mp4" type="video/mp4"></video></div>
+        <div class="hero-panel mid"><video autoplay muted loop playsinline preload="auto" poster="../media/panel-poster.jpg" tabindex="-1"><source src="../media/panel-mid.mp4" type="video/mp4"></video></div>
+        <div class="hero-panel"><video autoplay muted loop playsinline preload="auto" poster="../media/panel-poster.jpg" tabindex="-1"><source src="../media/panel-left.mp4" type="video/mp4"></video></div>
+      </div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy rv">
+          <span class="eyebrow">כירורגיה פלסטית · משחזרת · קרניופציאלית</span>
+          <h1>אסתטיקה טבעית,<br><span class="accent">בראייה של כירורג</span></h1>
+          <blockquote class="hero-quote">
+            “בחרתי בכירורגיה פלסטית מאחר וזה התחום היחידי שבו אתה בוחר להינתח, ולא מאין ברירה.”
+            <cite>ד״ר ביאדר בלאל, מומחה בכירורגיה פלסטית</cite>
+          </blockquote>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">לתיאום פגישת ייעוץ</a>
+            <a href="#wa" class="btn btn-ghost" data-wa>שיחה בוואטסאפ</a>
+          </div>
+          <div class="hero-rating"><span class="stars" aria-hidden="true">★★★★★</span> <b>5.0</b> · 222 חוות דעת מטופלים</div>
+        </div>
+      </div>
+      <div class="hero-cue" aria-hidden="true">
+        <span>גלילה
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+        </span>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="trust">
+      <div class="wrap" style="padding-block:0">
+        <div class="trust-row">
+          <div class="trust-cell">
+            <div class="trust-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="5"/><path d="M8.3 12.5 7 22l5-2.8 5 2.8-1.3-9.5"/></svg></div>
+            <b>בורד</b><span>מומחה בכירורגיה פלסטית ומשחזרת · שיבא תל השומר</span>
+          </div>
+          <div class="trust-cell">
+            <div class="trust-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5l3.2 2"/></svg></div>
+            <b>+12</b><span>שנות ניסיון כירורגי<br>שורשים במרפאת וינקלר</span>
+          </div>
+          <div class="trust-cell">
+            <div class="trust-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l1.9 5.3L19 10l-5.1 1.7L12 17l-1.9-5.3L5 10l5.1-1.7z"/></svg></div>
+            <b>קרניופציאלית</b><span>תת-התמחות נדירה<br>טאיוואן</span>
+          </div>
+          <div class="trust-cell">
+            <div class="trust-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg></div>
+            <b>3 שפות</b><span>עברית · אנגלית · ערבית<br>לכל מגזר</span>
+          </div>
+          <div class="trust-cell">
+            <div class="trust-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <b>פגישת ייעוץ</b><span>אבחון כן ופתוח<br>מקוזז בטיפול</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="section" id="why" style="padding-top:clamp(32px,4vw,56px)">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <span class="eyebrow">הגישה</span>
+          <h2>למה מטופלים בוחרים בד״ר ביאדר</h2>
+          <p class="lead">מגע עדין, ראייה אסתטית אנושית, ותהליך שמכבד את מי שאתם, לא רק את מה שתרצו לשנות.</p>
+        </div>
+        <div class="why-grid">
+          <article class="why-card rv">
+            <div class="why-body">
+              <div class="why-num">01</div>
+              <h3>תוצאה טבעית, לא מנותחת</h3>
+              <p>התמחות בניתוחים עדינים עם מראה טבעי וחיוני. שינוי קטן במראה שמחזיר ביטחון גדול, בלי לאבד את הזהות האישית שלכם.</p>
+            </div>
+            <div class="why-media"><img src="../img/natural-cutout-soft.png" alt="מטופלת של ד״ר ביאדר, תוצאה טבעית ומראה רענן, ללא רקע" loading="lazy" decoding="async" style="object-fit:contain;object-position:center bottom;padding:5% 5% 0"></div>
+          </article>
+          <article class="why-card rv" style="animation-delay:.08s">
+            <div class="why-body">
+              <div class="why-num">02</div>
+              <h3>העין של כירורג, גם בהזרקות</h3>
+              <p>בוטוקס וחומצה היאלורונית בידיים של מנתח פלסטי עם הבנה אנטומית עמוקה של שרירי ומבנה הפנים. ערך מוסף לפני ואחרי ניתוח.</p>
+            </div>
+            <div class="why-media"><img src="../img/aesthetic.jpg" alt="ד״ר ביאדר מבצע טיפול הזרקה בפנים בעין של כירורג, היד נוגעת במטופלת" loading="lazy" decoding="async" style="object-position:center top"></div>
+          </article>
+          <article class="why-card rv" style="animation-delay:.16s">
+            <div class="why-body">
+              <div class="why-num">03</div>
+              <h3>ייעוץ כן, בלי לחץ</h3>
+              <p>פגישת ייעוץ פתוחה שבה מאבחנים ומסבירים לעומק, בלי „לדחוף” טיפולים. פגישת הייעוץ מקוזזת כאשר נסגר ניתוח או טיפול.</p>
+            </div>
+            <div class="why-media"><img src="../img/consult.jpg" alt="ד״ר ביאדר בפגישת ייעוץ אישית, יושב מקשיב ומסביר ללא לחץ" loading="lazy" decoding="async" style="object-position:center 55%"></div>
+          </article>
+          <article class="why-card rv" style="animation-delay:.24s">
+            <div class="why-body">
+              <div class="why-num">04</div>
+              <h3>שורשים במצוינות</h3>
+              <p>שנים של עבודה עצמאית במרפאת ד״ר וינקלר הנחשבת, לצד תת-התמחות נדירה בכירורגיה קרניופציאלית ומומים מולדים.</p>
+            </div>
+            <div class="why-media"><img src="../img/surgery.jpg" alt="ד״ר ביאדר בחדר הניתוח, שורשים של מצוינות כירורגית" loading="lazy" decoding="async" style="object-position:center 50%"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TREATMENTS (image category tiles) -->
+    <section class="section" id="treatments" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head center rv">
+          <span class="eyebrow">תחומי הטיפול</span>
+          <h2>מגוון מלא, מניתוח ועד אסתטיקה</h2>
+          <p class="lead">חמישה תחומים תחת קורת גג אחת: ארבעה כירורגיים, ולצידם אסתטיקה לא-ניתוחית בעין של מנתח.</p>
+        </div>
+      </div>
+      <div class="treat-gallery">
+        <a class="tcat rv" href="#contact" aria-label="ניתוחי חזה">
+          <img src="../img/cat-breast.jpg" alt="ניתוחי חזה - הרמה, הגדלה והקטנה">
+          <div class="tcat-label"><h3>ניתוחי חזה</h3><span class="tcat-sub">הרמה · הגדלה · הקטנה</span><div class="tcat-list"><ul class="tcat-list-in"><li>הגדלת חזה</li><li>הקטנת חזה</li><li>הרמת חזה</li><li>החלפת שתלים</li><li>גניקומסטיה</li></ul></div><span class="t-arrow">←</span></div>
+        </a>
+        <a class="tcat rv" href="#contact" aria-label="ניתוחי אף">
+          <img src="../img/cat-nose.jpg" alt="ניתוחי אף בגישה סגורה ופתוחה">
+          <div class="tcat-label"><h3>ניתוחי אף</h3><span class="tcat-sub">גישה סגורה ופתוחה</span><span class="t-arrow">←</span></div>
+        </a>
+        <a class="tcat rv" href="#contact" aria-label="עיצוב הגוף">
+          <img src="../img/cat-body.jpg" alt="עיצוב הגוף - מתיחת בטן ושאיבת שומן">
+          <div class="tcat-label"><h3>עיצוב הגוף</h3><span class="tcat-sub">מתיחת בטן · שאיבת שומן</span><div class="tcat-list"><ul class="tcat-list-in"><li>מתיחת בטן</li><li>שאיבת שומן</li><li>עיצוב זרועות</li><li>עיצוב והרמת ישבן</li><li>מתיחת ירכיים וליפטינג גוף היקפי</li><li>מאמי מייקאובר</li><li>פלג גוף עליון/תחתון</li><li>הסרת עודפי עור לאחר הרזיה</li><li>מתיחת בטן היקפית (Body Lift)</li></ul></div><span class="t-arrow">←</span></div>
+        </a>
+        <a class="tcat rv" href="#contact" aria-label="ניתוחי פנים וצוואר">
+          <img src="../img/cat-face.jpg" alt="ניתוחי פנים וצוואר והצמדת אוזניים">
+          <div class="tcat-label"><h3>ניתוחי פנים וצוואר</h3><span class="tcat-sub">מתיחה · עפעפיים · אוזניים</span><div class="tcat-list"><ul class="tcat-list-in"><li>מתיחת פנים</li><li>הרמת מצח</li><li>עפעפיים עליונים / תחתונים</li><li>מתיחת פנים וצוואר</li><li>הרמת גבות</li><li>הרמת סנטר</li><li>הצמדת אוזניים</li></ul></div><span class="t-arrow">←</span></div>
+        </a>
+        <a class="tcat rv" href="#contact" aria-label="טיפולים אסתטיים לא ניתוחיים">
+          <img src="../img/cat-aesthetic.jpg" alt="טיפולים אסתטיים - בוטוקס, חומצה היאלורונית וטיפול בנגעים">
+          <div class="tcat-label"><h3>אסתטיקה</h3><span class="tcat-sub">בוטוקס · אסתטי ורפואי</span><div class="tcat-list"><ul class="tcat-list-in"><li class="tcat-group">בוטוקס אסתטי</li><li>מצח</li><li>גבות</li><li>צידי עיניים</li><li>אזורים נוספים</li><li class="tcat-group">רפואי ופונקציונלי</li><li>מיגרנות כרוניות</li><li>הזעת יתר</li><li>חריקת שיניים</li></ul></div><span class="t-arrow">←</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="tst section" id="testimonials" style="padding-top:clamp(36px,4vw,56px);padding-bottom:clamp(28px,3.5vw,48px)">
+      <div class="wrap">
+        <div class="sec-head center rv">
+          <span class="eyebrow">מטופלים מספרים</span>
+          <h2>האמון שנבנה, פגישה אחר פגישה</h2>
+        </div>
+        <svg width="0" height="0" aria-hidden="true" style="position:absolute"><symbol id="gIcon" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.9 2.4 30.5 0 24 0 14.6 0 6.4 5.4 2.6 13.2l7.9 6.2C12.4 13.7 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.6c0-1.6-.1-3.1-.4-4.6H24v9.3h12.4c-.5 2.9-2.2 5.3-4.7 7l7.6 5.9c4.4-4.1 7-10.2 7-17.6z"/><path fill="#FBBC05" d="M10.5 28.4c-.5-1.4-.8-2.9-.8-4.4s.3-3 .8-4.4l-7.9-6.2C1 16.5 0 20.1 0 24s1 7.5 2.6 10.6l7.9-6.2z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2.1 1.4-4.8 2.3-8.3 2.3-6.3 0-11.6-4.2-13.5-9.9l-7.9 6.2C6.4 42.6 14.6 48 24 48z"/></symbol></svg>
+        <div class="tst-score rv">
+          <svg class="g" aria-label="Google"><use href="#gIcon"/></svg>
+          <span class="big">5.0</span>
+          <span class="stars" aria-label="חמישה כוכבים">★★★★★</span>
+          <span class="divider" aria-hidden="true"></span>
+          <span class="sub"><b>222</b> ביקורות מאומתות · דירוג מושלם</span>
+        </div>
+        <div class="tst-slider" id="tstSlider">
+          <div class="tst-track" id="tstTrack">
+            <article class="tst-card rv">
+              <div class="tst-head">
+                <span class="tst-ava" style="--av:#B25E3C">א</span>
+                <span class="tst-id"><span class="nm">אורטל אדרי</span><span class="pr">מתיחת בטן ושאיבת שומן</span></span>
+                <svg class="g" aria-label="ביקורת Google"><use href="#gIcon"/></svg>
+              </div>
+              <span class="stars" aria-label="חמישה כוכבים">★★★★★</span>
+              <p class="q">“זה לא רק מנתח, זה אומן שיודע בדיוק מה הוא עושה. יחס וסבלנות לכל שאלה, ותמיד זמין. לא יכולתי לבחור טוב ממנו.”</p>
+            </article>
+            <article class="tst-card rv" style="animation-delay:.06s">
+              <div class="tst-head">
+                <span class="tst-ava" style="--av:#5C7A36">ל</span>
+                <span class="tst-id"><span class="nm">לי נחמני</span><span class="pr">ניתוח אף משולב</span></span>
+                <svg class="g" aria-label="ביקורת Google"><use href="#gIcon"/></svg>
+              </div>
+              <span class="stars" aria-label="חמישה כוכבים">★★★★★</span>
+              <p class="q">“היום הורדתי את הגבס ואני לא יכולה לתאר כמה אני מאושרת. האף יצא עדין, טבעי ומדויק לפנים שלי, בדיוק כמו שדמיינתי.”</p>
+            </article>
+            <article class="tst-card rv" style="animation-delay:.12s">
+              <div class="tst-head">
+                <span class="tst-ava" style="--av:#C9825E">ק</span>
+                <span class="tst-id"><span class="nm">קסניה נווה</span><span class="pr">הרמה והגדלת חזה</span></span>
+                <svg class="g" aria-label="ביקורת Google"><use href="#gIcon"/></svg>
+              </div>
+              <span class="stars" aria-label="חמישה כוכבים">★★★★★</span>
+              <p class="q">“ההחלמה היתה סופר מהירה, מיום ליום הרגשתי טוב יותר, והתוצאה פשוט וואו. אני רק מצטערת שלא עשיתי את זה קודם.”</p>
+            </article>
+            <article class="tst-card rv" style="animation-delay:.18s">
+              <div class="tst-head">
+                <span class="tst-ava" style="--av:#7E9A52">ת</span>
+                <span class="tst-id"><span class="nm">תמיר פרוכט</span><span class="pr">טיפול בתינוקת</span></span>
+                <svg class="g" aria-label="ביקורת Google"><use href="#gIcon"/></svg>
+              </div>
+              <span class="stars" aria-label="חמישה כוכבים">★★★★★</span>
+              <p class="q">“ד״ר ביאדר טיפל בבתנו בת שבעה ימים בנועם ובאנושיות מדהימה. ההסברים והטיפול המעמיק העניקו לנו רוגע וביטחון בתקופה הרגישה שאחרי הלידה.”</p>
+            </article>
+            <article class="tst-card rv" style="animation-delay:.24s">
+              <div class="tst-head">
+                <span class="tst-ava" style="--av:#A0694B">ו</span>
+                <span class="tst-id"><span class="nm">ורדה גיל</span><span class="pr">הקטנת חזה</span></span>
+                <svg class="g" aria-label="ביקורת Google"><use href="#gIcon"/></svg>
+              </div>
+              <span class="stars" aria-label="חמישה כוכבים">★★★★★</span>
+              <p class="q">“אדיב וסופר מקצועי, והקשיב בדיוק למה שביקשתי. ההחלמה היתה קצרה מאוד והתוצאה נראית מעולה, בדיוק כמו שרציתי.”</p>
+            </article>
+            <article class="tst-card rv" style="animation-delay:.3s">
+              <div class="tst-head">
+                <span class="tst-ava" style="--av:#6F8C47">ל</span>
+                <span class="tst-id"><span class="nm">לימור תייר</span><span class="pr">תיקון ניתוח אף</span></span>
+                <svg class="g" aria-label="ביקורת Google"><use href="#gIcon"/></svg>
+              </div>
+              <span class="stars" aria-label="חמישה כוכבים">★★★★★</span>
+              <p class="q">“הגעתי אחרי שנים של אכזבה מניתוח אף קודם, עם לא מעט חששות. כבר מהרגע הראשון הרגשתי שאני בידיים מקצועיות, עם רופא קשוב, סבלני ויסודי.”</p>
+            </article>
+          </div>
+        </div>
+        <p class="tst-foot">דירוג ממוצע של <b>5.0</b> מתוך 222 חוות דעת מאומתות של מטופלים</p>
+      </div>
+    </section>
+
+    <!-- COVERFLOW GALLERY -->
+    <section class="section" style="padding-top:clamp(40px,5vw,72px)">
+      <div class="wrap">
+        <div class="sec-head center rv">
+          <span class="eyebrow">הצצה אל המרפאה</span>
+          <h2>דיוק, שגרת עבודה, ואדם אחד מאחורי הכול</h2>
+        </div>
+      </div>
+      <div class="flow-wrap">
+        <div class="flow" id="flow">
+          <figure class="slide"><img src="../img/consult.jpg" alt="פגישת ייעוץ אישית במרפאה"><figcaption><b>הייעוץ</b><span>אבחון כן ופתוח, בלי לחץ</span></figcaption></figure>
+          <figure class="slide"><img src="../img/nose.jpg" alt="סימון טרום-ניתוחי מדויק של אזור הטיפול"><figcaption><b>התכנון</b><span>סימון מדויק לפני כל ניתוח</span></figcaption></figure>
+          <figure class="slide"><img src="../img/aesthetic.jpg" alt="טיפול אסתטי של הזרקות בפנים"><figcaption><b>אסתטיקה</b><span>הזרקות בעין של כירורג</span></figcaption></figure>
+          <figure class="slide"><img src="../img/surgery.jpg" alt="ד״ר ביאדר בחדר הניתוח עם צוות רפואי"><figcaption><b>חדר הניתוח</b><span>מיומנות וצוות מנוסה</span></figcaption></figure>
+          <figure class="slide"><img src="../img/ear.jpg" alt="תכנון מדויק של ניתוח הצמדת אוזניים"><figcaption><b>הדיוק</b><span>מילימטרים משנים תוצאה</span></figcaption></figure>
+          <figure class="slide"><img src="../img/face.jpg" alt="טיפול פנים מקצועי במרפאה"><figcaption><b>הליווי</b><span>יחס אישי לכל אורך הדרך</span></figcaption></figure>
+        </div>
+        <div class="flow-nav" id="flowNav"></div>
+      </div>
+    </section>
+
+    <!-- BEFORE / AFTER -->
+    <section class="ba section" id="ba">
+      <div class="wrap ba-grid">
+        <div class="rv">
+          <span class="eyebrow">תוצאות אמיתיות</span>
+          <h2 style="font-size:var(--fs-h2);margin:.6rem 0 1rem">לראות את ההבדל, בזמן אמת</h2>
+          <p class="lead">לחצו על הכפתור וגררו אותו לצדדים כדי להשוות בין המצב לפני הניתוח לבין התוצאה. ניתוח אף בגישה של ד״ר ביאדר: עדין, מדויק, וטבעי לפנים.</p>
+          <div class="ba-note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+            תמונות אמיתיות של מטופלת ד״ר ביאדר, מוצגות בהסכמה.
+          </div>
+        </div>
+        <div>
+          <div class="ba-stages">
+            <figure class="ba-item rv">
+              <div class="ba-stage" data-ba>
+                <img class="ba-before" src="../img/ba-front-before.jpg" alt="מטופלת לפני ניתוח אף, מבט חזית" loading="lazy" decoding="async" draggable="false">
+                <img class="ba-after" src="../img/ba-front-after.jpg" alt="אותה מטופלת אחרי ניתוח אף אצל ד״ר ביאדר, מבט חזית" loading="lazy" decoding="async" draggable="false">
+                <span class="ba-tag before">לפני</span>
+                <span class="ba-tag after">אחרי</span>
+                <div class="ba-handle"></div>
+                <div class="ba-knob" role="slider" aria-label="השוואת לפני ואחרי, מבט חזית" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5"/></svg>
+                </div>
+              </div>
+              <figcaption class="ba-cap">מבט חזית</figcaption>
+            </figure>
+            <figure class="ba-item rv" style="animation-delay:.1s">
+              <div class="ba-stage" data-ba>
+                <img class="ba-before" src="../img/ba-profile-before.jpg" alt="מטופלת לפני ניתוח אף, מבט צד" loading="lazy" decoding="async" draggable="false">
+                <img class="ba-after" src="../img/ba-profile-after.jpg" alt="אותה מטופלת אחרי ניתוח אף אצל ד״ר ביאדר, מבט צד" loading="lazy" decoding="async" draggable="false">
+                <span class="ba-tag before">לפני</span>
+                <span class="ba-tag after">אחרי</span>
+                <div class="ba-handle"></div>
+                <div class="ba-knob" role="slider" aria-label="השוואת לפני ואחרי, מבט צד" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5"/></svg>
+                </div>
+              </div>
+              <figcaption class="ba-cap">מבט צד</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <div class="wrap about-grid">
+        <div class="about-media rv">
+          <img src="../img/portrait.jpg" alt="ד״ר ביאדר בלאל, מומחה בכירורגיה פלסטית">
+          <div class="frame"></div>
+        </div>
+        <div class="rv" style="animation-delay:.1s">
+          <span class="eyebrow">ד״ר ביאדר בלאל</span>
+          <h2>רופא, אומן, ואדם שמקשיב</h2>
+          <blockquote class="vision">“אני מאמין שכל אדם זכאי להרגיש שלם ובטוח בגופו. כשאנחנו שלמים, אנחנו מקרינים את זה לעולם.”</blockquote>
+          <p>מומחה בכירורגיה פלסטית, משחזרת וקרניופציאלית, עם למעלה מ-12 שנות ניסיון. יצא לעצמאות לאחר שנים של עבודה כמנתח עצמאי במרפאת ד״ר וינקלר הנחשבת, וצבר ידע וניסיון רב בדיוק האסתטי של הפנים והגוף.</p>
+          <p>לצד הפעילות האסתטית, ד״ר ביאדר מתמחה בניתוחי שפה וחך שסוע ומומים מולדים, תת-התמחות נדירה שרכש בטאיוואן. הראייה הכירורגית-אנטומית הזו היא מה שהופך כל טיפול שלו למדויק וטבעי יותר.</p>
+          <div class="cred">
+            <span>MD · האוניברסיטה העברית</span>
+            <span>מומחה פלסטיקה · שיבא תל השומר</span>
+            <span>קרניופציאלית · Taipei</span>
+            <span>5.0 · 222 חוות דעת</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO BAND -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <a class="vid" href="https://www.youtube.com/@DoctorBiader" target="_blank" rel="noopener" aria-label="צפייה בסרטוני ד״ר ביאדר ביוטיוב">
+          <img src="../img/instruments.jpg" alt="מכשור כירורגי מסודר במרפאת ד״ר ביאדר">
+          <div class="vid-inner">
+            <div class="play"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <h2>להכיר את ד״ר ביאדר, בוידאו</h2>
+            <p>הסברים על טיפולים, הצצה אל המרפאה וחדר הניתוח, וסיפורים של מטופלים. משהו שאף מרפאה אחרת לא מראה.</p>
+            <span class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.5)">לערוץ היוטיוב</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact" style="padding-top:0">
+      <div class="wrap contact-grid">
+        <div class="rv">
+          <span class="eyebrow">צרו קשר</span>
+          <h2>נתחיל בשיחה</h2>
+          <p class="lead" style="margin-bottom:1.6rem">פגישת ייעוץ היא הצעד הראשון. נכיר, נבין מה חשוב לכם, ונבנה יחד את התהליך הנכון.</p>
+          <div class="info-row">
+            <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+            <div><b>טלפון ווואטסאפ</b><a class="num" href="#" data-wa>050-359-3642</a></div>
+          </div>
+          <div class="info-row">
+            <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><b>המרפאה</b><span>רחוב הברזל 11, רמת החייל, תל אביב</span></div>
+          </div>
+          <div class="info-row">
+            <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+            <div><b>רשתות</b><span><a href="https://www.instagram.com/dr.biader" target="_blank" rel="noopener">אינסטגרם</a> · <a href="https://www.facebook.com/dr.biader" target="_blank" rel="noopener">פייסבוק</a> · <a href="https://www.youtube.com/@DoctorBiader" target="_blank" rel="noopener">יוטיוב</a></span></div>
+          </div>
+        </div>
+        <form id="cform" novalidate>
+          <div>
+            <label for="f-name">שם מלא</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="השם שלך">
+          </div>
+          <div>
+            <label for="f-phone">טלפון</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" style="text-align:right" placeholder="05X-XXXXXXX">
+          </div>
+          <div>
+            <label for="f-topic">תחום הפנייה</label>
+            <select id="f-topic" name="topic">
+              <option>ניתוח אף</option><option>ניתוחי חזה</option><option>ניתוחי פנים וצוואר</option>
+              <option>עיצוב הגוף</option><option>הצמדת אוזניים</option><option>אסתטיקה והזרקות</option><option>אחר</option>
+            </select>
+          </div>
+          <div>
+            <label for="f-msg">הודעה</label>
+            <textarea id="f-msg" name="msg" rows="3" placeholder="מה תרצו לשתף לפני הפגישה?"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit" style="justify-content:center">שליחה לתיאום ייעוץ</button>
+          <p class="form-msg" id="fmsg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <img class="foot-logo" src="../img/logo-stacked.png" alt="Dr. Biader, Plastic Surgeon - ד״ר ביאדר בלאל" width="473" height="400" loading="lazy" decoding="async">
+          <p>מומחה בכירורגיה פלסטית, משחזרת וקרניופציאלית. אסתטיקה טבעית, במגע עדין ובליווי אישי.</p>
+          <div class="foot-social">
+            <a href="https://www.instagram.com/dr.biader" target="_blank" rel="noopener" aria-label="אינסטגרם"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.facebook.com/dr.biader" target="_blank" rel="noopener" aria-label="פייסבוק"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H17V.2A21 21 0 0 0 14.8 0C12.4 0 11 1.4 11 4v2H8v3h3v9h3z"/></svg></a>
+            <a href="https://www.youtube.com/@DoctorBiader" target="_blank" rel="noopener" aria-label="יוטיוב"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.3-.4-4.8a2.5 2.5 0 0 0-1.8-1.8C19.3 5 12 5 12 5s-7.3 0-8.8.4A2.5 2.5 0 0 0 1.4 7.2C1 8.7 1 12 1 12s0 3.3.4 4.8a2.5 2.5 0 0 0 1.8 1.8C4.7 19 12 19 12 19s7.3 0 8.8-.4a2.5 2.5 0 0 0 1.8-1.8C23 15.3 23 12 23 12zM10 15V9l5 3z"/></svg></a>
+          </div>
+        </div>
+        <div class="foot-col">
+          <h4>הטיפולים</h4>
+          <a href="#treatments">ניתוחי אף</a>
+          <a href="#treatments">ניתוחי חזה</a>
+          <a href="#treatments">ניתוחי פנים וצוואר</a>
+          <a href="#treatments">עיצוב הגוף</a>
+          <a href="#treatments">אסתטיקה והזרקות</a>
+        </div>
+        <div class="foot-col">
+          <h4>ניווט</h4>
+          <a href="#about">אודות</a>
+          <a href="#ba">לפני ואחרי</a>
+          <a href="#testimonials">המלצות</a>
+          <a href="#contact">צור קשר</a>
+          <a href="#contact">הצהרת נגישות</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 ד״ר ביאדר בלאל. כל הזכויות שמורות.</span>
+        <span>עיצוב ופיתוח · Bzik שיווק דיגיטלי</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="#wa" data-wa aria-label="שיחה בוואטסאפ">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.2.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.8.9c.3.1.5.2.5.4.1.1.1.6-.1 1.2z"/></svg>
+  </a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var root=document.documentElement;
+
+  /* THEME */
+  var stored;try{stored=localStorage.getItem("biader-theme");}catch(e){}
+  if(stored)root.setAttribute("data-theme",stored);
+  function sunMoon(){
+    var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme:dark)").matches);
+    var ic=document.getElementById("theme-ic");
+    if(dark){ic.innerHTML='<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>';}
+    else{ic.innerHTML='<circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6 19 19M19 5l-1.4 1.4M6.4 17.6 5 19"/>';}
+  }
+  sunMoon();
+  document.getElementById("theme").addEventListener("click",function(){
+    var cur=root.getAttribute("data-theme");
+    var isDark=cur==="dark"||(!cur&&matchMedia("(prefers-color-scheme:dark)").matches);
+    var next=isDark?"light":"dark";
+    root.setAttribute("data-theme",next);
+    try{localStorage.setItem("biader-theme",next);}catch(e){}
+    sunMoon();
+  });
+
+  /* HEADER SCROLL */
+  var hdr=document.getElementById("hdr");
+  addEventListener("scroll",function(){hdr.classList.toggle("scrolled",scrollY>12);},{passive:true});
+
+  /* MOBILE NAV */
+  var mnav=document.getElementById("mnav");
+  function closeM(){mnav.classList.remove("open");}
+  document.getElementById("burger").addEventListener("click",function(){mnav.classList.add("open");});
+  document.getElementById("mclose").addEventListener("click",closeM);
+  mnav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",closeM);});
+
+  /* WHATSAPP (number kept out of a visible wa.me link; built on click) */
+  var WA="972503593642";
+  document.querySelectorAll("[data-wa]").forEach(function(el){
+    el.addEventListener("click",function(e){
+      e.preventDefault();
+      var msg=encodeURIComponent("היי, הגעתי מהאתר ואשמח לתאם פגישת ייעוץ");
+      window.open("https://wa.me/"+WA+"?text="+msg,"_blank","noopener");
+    });
+  });
+
+  /* COVERFLOW */
+  var flow=document.getElementById("flow");
+  var slides=[].slice.call(flow.children);
+  var nav=document.getElementById("flowNav");
+  slides.forEach(function(_,i){
+    var b=document.createElement("button");b.className="flow-dot";b.setAttribute("aria-label","תמונה "+(i+1));
+    b.addEventListener("click",function(){centerOn(i);});nav.appendChild(b);
+  });
+  var dots=[].slice.call(nav.children);
+  function update(){
+    var fc=flow.getBoundingClientRect();var mid=fc.left+fc.width/2;var best=0,bd=1e9;
+    slides.forEach(function(s,i){
+      var r=s.getBoundingClientRect();var c=r.left+r.width/2;var d=Math.abs(c-mid);
+      if(d<bd){bd=d;best=i;}
+    });
+    slides.forEach(function(s,i){s.classList.toggle("active",i===best);});
+    dots.forEach(function(d,i){d.classList.toggle("on",i===best);});
+  }
+  function centerOn(i){
+    var s=slides[i];
+    flow.scrollTo({left:s.offsetLeft-(flow.clientWidth-s.clientWidth)/2,behavior:"smooth"});
+  }
+  flow.addEventListener("scroll",function(){window.requestAnimationFrame(update);},{passive:true});
+  /* drag to scroll */
+  var down=false,sx=0,sl=0,moved=false;
+  flow.addEventListener("pointerdown",function(e){down=true;moved=false;sx=e.clientX;sl=flow.scrollLeft;flow.classList.add("drag");});
+  addEventListener("pointermove",function(e){if(!down)return;var dx=e.clientX-sx;if(Math.abs(dx)>4)moved=true;flow.scrollLeft=sl-dx;});
+  addEventListener("pointerup",function(){if(!down)return;down=false;flow.classList.remove("drag");
+    var nearest=0,bd=1e9,fc=flow.getBoundingClientRect(),mid=fc.left+fc.width/2;
+    slides.forEach(function(s,i){var r=s.getBoundingClientRect();var d=Math.abs(r.left+r.width/2-mid);if(d<bd){bd=d;nearest=i;}});
+    centerOn(nearest);
+  });
+  setTimeout(function(){centerOn(Math.floor(slides.length/2));setTimeout(update,350);},60);
+  addEventListener("resize",update);
+  /* AUTO-ADVANCE — the centered image moves on its own every 1.5s (pause on hover/drag) */
+  (function(){
+    if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+    var t=null;
+    function curIndex(){
+      var fc=flow.getBoundingClientRect(),mid=fc.left+fc.width/2,best=0,bd=1e9;
+      slides.forEach(function(s,i){var r=s.getBoundingClientRect();var d=Math.abs(r.left+r.width/2-mid);if(d<bd){bd=d;best=i;}});
+      return best;
+    }
+    function next(){if(down)return;centerOn((curIndex()+1)%slides.length);}
+    function start(){stop();t=setInterval(next,1500);}
+    function stop(){if(t){clearInterval(t);t=null;}}
+    flow.addEventListener("mouseenter",stop);
+    flow.addEventListener("mouseleave",start);
+    flow.addEventListener("pointerdown",stop);
+    addEventListener("pointerup",function(){if(!flow.matches(":hover"))start();});
+    start();
+  })();
+
+  /* BEFORE / AFTER — press the knob (or anywhere on the image) and drag it sideways; arrows for keyboard.
+     split is a % from the physical LEFT (before = left, after = right). */
+  [].forEach.call(document.querySelectorAll("[data-ba]"),function(stage){
+    var knob=stage.querySelector(".ba-knob");
+    function setSplit(pct){
+      pct=Math.max(2,Math.min(98,pct));
+      stage.style.setProperty("--split",pct+"%");
+      if(knob)knob.setAttribute("aria-valuenow",Math.round(pct));
+    }
+    setSplit(50);
+    function fromX(clientX){
+      var r=stage.getBoundingClientRect();
+      setSplit((clientX-r.left)/r.width*100);
+    }
+    var dragging=false;
+    function endDrag(){dragging=false;stage.classList.remove("drag");}
+    stage.addEventListener("pointerdown",function(e){
+      dragging=true;stage.classList.add("drag");fromX(e.clientX);
+      if(stage.setPointerCapture){try{stage.setPointerCapture(e.pointerId);}catch(_){}}
+      e.preventDefault();
+    });
+    stage.addEventListener("pointermove",function(e){if(dragging)fromX(e.clientX);});
+    stage.addEventListener("pointerup",endDrag);
+    stage.addEventListener("pointercancel",endDrag);
+    if(knob)knob.addEventListener("keydown",function(e){
+      var cur=parseFloat(stage.style.getPropertyValue("--split"))||50;
+      if(e.key==="ArrowLeft"){setSplit(cur-4);e.preventDefault();}
+      if(e.key==="ArrowRight"){setSplit(cur+4);e.preventDefault();}
+    });
+  });
+
+  /* FORM */
+  document.getElementById("cform").addEventListener("submit",function(e){
+    e.preventDefault();
+    var name=document.getElementById("f-name").value.trim();
+    var phone=document.getElementById("f-phone").value.trim();
+    var msg=document.getElementById("fmsg");
+    if(!name||!phone){msg.style.color="var(--mauve-deep)";msg.textContent="נא למלא שם וטלפון כדי שנחזור אליכם.";return;}
+    msg.style.color="var(--olive-deep)";
+    msg.textContent="תודה "+name+", הפנייה נקלטה. ניצור קשר בהקדם לתיאום פגישת הייעוץ.";
+    this.reset();
+  });
+
+  /* TESTIMONIALS AUTO SLIDER — single row, advances every 1.5s (RTL-aware) */
+  (function(){
+    var slider=document.getElementById("tstSlider"),track=document.getElementById("tstTrack");
+    if(!slider||!track)return;
+    if(matchMedia("(prefers-reduced-motion:reduce)").matches){slider.style.overflowX="auto";return;}
+    var cards=[].slice.call(track.children),count=cards.length;
+    if(!count)return;
+    cards.forEach(function(c){var cl=c.cloneNode(true);cl.classList.remove("rv");cl.setAttribute("aria-hidden","true");track.appendChild(cl);});
+    var dotsWrap=document.createElement("div");dotsWrap.className="tst-dots";var dots=[];
+    for(var i=0;i<count;i++){(function(j){
+      var b=document.createElement("button");b.type="button";b.className="tst-dot";b.setAttribute("aria-label","המלצה "+(j+1));
+      b.addEventListener("click",function(){idx=j;go(true);restart();});
+      dotsWrap.appendChild(b);dots.push(b);
+    })(i);}
+    slider.parentNode.insertBefore(dotsWrap,slider.nextSibling);
+    var idx=0,timer=null;
+    function stepPx(){var f=track.children[0];var cs=getComputedStyle(track);var gap=parseFloat(cs.columnGap||cs.gap)||0;return f.getBoundingClientRect().width+gap;}
+    function go(animate){
+      track.style.transition=animate?"transform .7s cubic-bezier(.2,.8,.2,1)":"none";
+      track.style.transform="translateX("+(idx*stepPx())+"px)";
+      for(var k=0;k<dots.length;k++)dots[k].classList.toggle("on",k===(idx%count));
+    }
+    function advance(){idx++;go(true);if(idx>=count)window.setTimeout(function(){idx=0;go(false);},720);}
+    function start(){stop();timer=window.setInterval(advance,1500);}
+    function stop(){if(timer){clearInterval(timer);timer=null;}}
+    function restart(){stop();start();}
+    slider.addEventListener("mouseenter",stop);
+    slider.addEventListener("mouseleave",start);
+    window.addEventListener("resize",function(){go(false);});
+    go(false);start();
+  })();
+})();
+</script>
+
+</body></html>
